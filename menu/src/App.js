@@ -4,7 +4,7 @@ import Categories from "./Categories";
 import data from "./data";
 
 function App() {
-  const allCategories = ["all", ...data.map((item) => item.category)];
+  const allCategories = ["all", ...new Set(data.map((item) => item.category))];
   const [items, setItems] = useState(data);
   const filteredItemHandler = (category) => {
     if (category === "all") {
